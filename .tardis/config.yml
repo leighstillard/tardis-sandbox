@@ -1,0 +1,9 @@
+# tardis-gate enrolment for this sandbox.
+verify_runbook: docs/RUNBOOK.md
+worker_vendors: [anthropic]
+auto_merge: true
+merge_method: squash
+gates:
+  - name: simplify
+  - name: verify
+  - name: review

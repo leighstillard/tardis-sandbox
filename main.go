@@ -1,14 +1,16 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"os"
 )
 
 func main() {
+	greeting := flag.String("greeting", "hello", "word to greet with")
+	flag.Parse()
 	name := "world"
-	if len(os.Args) > 1 {
-		name = os.Args[1]
+	if flag.NArg() > 0 {
+		name = flag.Arg(0)
 	}
-	fmt.Println("hello,", name)
+	fmt.Printf("%s, %s\n", *greeting, name)
 }
